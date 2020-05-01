@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <body>
   <header>
-    <?php $this->load->view('header/header.php'); ?>
+    <?php $this->load->view('navbar/navbar.php'); ?>
   </header>
 
   <main role="main">
