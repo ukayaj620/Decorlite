@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="<?php echo base_url('css/header.css'); ?>">
-<nav class="navbar navbar-expand-lg navbar-light mr-auto bg-custom-color sticky-top">
+
+<nav class="navbar navbar-expand-lg navbar-light mr-auto bg-custom-color">
   <a class="navbar-brand" href="<?php echo base_url(); ?>">
     <h1 class="display-6 fg-custom-color"> DECORLITE </h1>
   </a>

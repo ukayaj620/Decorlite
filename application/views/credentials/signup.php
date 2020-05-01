@@ -4,20 +4,20 @@
     <form class="custom-container">
         <h1 class="inner-container display-6"> Let's Sign up! </h1>
     <div class="form-group">
-        <label for="email">Name</label>
-        <input type="text" class="form-control" id="email" placeholder="name">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="name">
     </div>
     <div class="form-group">
-        <label for="password">Email</label>
-        <input type="text" class="form-control" id="password" placeholder="email">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" id="email" placeholder="email">
     </div>
     <div class="form-group">
         <label for="password">Password</label>
         <input type="text" class="form-control" id="password" placeholder="password">
     </div>
     <div class="form-group">
-        <label for="password">Confirm Password</label>
-        <input type="text" class="form-control" id="password" placeholder="confirm password">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="text" class="form-control" id="confirmPassword" placeholder="confirm password">
     </div>
     <div class="form-group">
         <button type="submit" class="btn-custom">Sign In</button>

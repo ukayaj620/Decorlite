@@ -21,3 +21,15 @@
     background-color: #FFAB00 !important;
     border: 2px solid #FFAB00;
 }
+
+.btn-custom-color:active {
+    color: #091E42 !important;
+    background-color: #FFAB00 !important;
+    border: 2px solid #FFAB00;
+    box-shadow: 0 0 4px rgba(255, 139, 0, 0.7) !important;
+}
+
+.custom-text {
+    color: #FFAB00 !important;
+    text-align: left;
+}
