@@ -1,9 +1,23 @@
-.header-color {
-    background-color: #19558E;
+.bg-custom-color {
+    background-color: rgba(255, 250, 229, 0.7) !important;
 }
-.nav-link, .navbar-brand {
-    color: #FFF ;
+
+.fg-custom-color {
+    color: rgba(0, 0, 0, 0.7) !important;
 }
-.nav-link:hover, .navbar-brand:hover {
-    text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+
+.fg-custom-color:hover {
+    text-shadow: 0 0 4px rgba(255, 139, 0, 0.7);
+}
+
+.btn-custom-color {
+    color: #FFAB00 !important;
+    background-color: #FFF !important;
+    border: 2px solid #FFAB00;
+}
+
+.btn-custom-color:hover {
+    color: #091E42 !important;
+    background-color: #FFAB00 !important;
+    border: 2px solid #FFAB00;
 }
