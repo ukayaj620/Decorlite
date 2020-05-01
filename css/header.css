@@ -1,0 +1,9 @@
+.header-color {
+    background-color: #19558E;
+}
+.nav-link, .navbar-brand {
+    color: #FFF ;
+}
+.nav-link:hover, .navbar-brand:hover {
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+}

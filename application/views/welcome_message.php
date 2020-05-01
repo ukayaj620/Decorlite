@@ -17,24 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <body>
   <header>
-    <div class="d-flex flex-column flex-lg-row align-items-center e p-3 px-lg-4 border-bottom shadow-sm"
-      style="background-color : #19558E;">
-      <nav class="mr-lg-auto ml-lg-5 mr-lg-auto">
-        <a class="navbar-brand text-white mr-0" href="">
-          <img src="" width="30px" height="30px">
-          <h3 class="d-inline-block align-middle mb-0">Decorlite</h3>
-        </a>
-      </nav>
-      <nav class="navbar-nav bd-navbar-nav flex-row my-1 mr-lg-5">
-        <a class="p-2 text-white align-middle" href="">Home</a>
-        <a class="p-2 text-white align-middle" href="">Daftar barang</a>
-        <a class="p-2 text-white align-middle" href="">About us</a>
-        <a class="p-2 text-white align-middle" href="">Contact us</a>
-        <a class="p-2 text-white align-middle" href="">Keranjang</a>
-        <a class="p-2 text-white align-middle" href="">Sign in</a>
-        <a class="p-2 text-white align-middle" href="">Sign up</a>
-      </nav>
-    </div>
+    <?php $this->load->view('header/header.php'); ?>
   </header>
 
   <main role="main">
