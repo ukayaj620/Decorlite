@@ -18,12 +18,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
   <?php $this->load->view('header/header.php'); ?>
 
-  <main role="main">
-  <?php $this->load->view('carousel/carousel.php'); ?>
+  <main role="main" class="container">
+    <?php $this->load->view('carousel/carousel.php'); ?>
 
-    <div class="container py-4">
-    <?php $this->load->view('card/items.php'); ?>
-    </div>
+    <?php $this->load->view('product/product.php'); ?>
   </main>
 
   <?php $this->load->view('footer/footer.php'); ?>
