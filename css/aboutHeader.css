@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+.container-fluid {
+    background: url('../img/about.jpg') repeat 0 0;
+    background-size: 100% 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    animation: fader 1s 1s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+@keyframes fader {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    } 
+}
+
+.about-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    color: #172B4D;
+    margin: 48px 0 24px 0;
+}
+
+.custom-button {
+    background-color: transparent;
+    border-radius: 4px;
+    border: 2px solid #000;
+    color: #000;
+    width: max-content;
+    height: 36px;
+    margin: 0 0 48px 0;
+    outline: 0;
+}
+
+.custom-button:hover, .custom-button:active {
+    background-color: #FFF;
+    box-shadow: 0 8px 24px #C1C7D0;
+    border: 0;
+    border-radius: 4px;
+    color: #000;
+    transition: .2s all ease-in-out;
+    outline: 0;
+}
+
+@media only screen and (max-width: 576px) {
+    .about-text {
+        font-size: 24px;
+        width: max-content;
+    }
+
+    .img-fluid {
+        height: 200px;
+    }
+
+    .custom-button {
+        font-size: 12px;
+    }
+}
