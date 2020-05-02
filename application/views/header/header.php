@@ -11,13 +11,16 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item mx-2">
+        <a class="nav-link fg-custom-color" href="<?php echo base_url(); ?>">HOME</a>
+      </li>
+      <li class="nav-item mx-2">
         <a class="nav-link fg-custom-color" href="<?php echo base_url('page/about'); ?>">ABOUT</a>
       </li>
       <li class="nav-item mx-2">
-      <a class="nav-link fg-custom-color" href="<?php echo base_url('page/contact'); ?>">CONTACT</a>
+        <a class="nav-link fg-custom-color" href="<?php echo base_url('page/contact'); ?>">CONTACT</a>
       </li>
       <li class="nav-item mx-2">
-        <a class="nav-link fg-custom-color" href="<?php echo base_url('page/cart'); ?>">CART</a>
+        <a class="nav-link fg-custom-color" href="<?php echo base_url('page/contact'); ?>">CART</a>
       </li>
       <li class="nav-item mx-2">
         <a href="<?php echo base_url('page/signin'); ?>" class="btn btn-custom-color d-none d-lg-block">SIGN IN</a>

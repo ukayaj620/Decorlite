@@ -6,6 +6,7 @@
     height: max-content;
     margin: 32px 0 16px 0;
     flex-direction: column;
+    text-align: center;
 }
 
 .custom-container {
@@ -13,4 +14,5 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    margin: 24px 0;
 }
