@@ -48,5 +48,12 @@ class Model_Transaksi extends CI_Model {
         return $query;
     }
 
+    public function delete($CartID)
+    {
+        $sSQL="delete from transaksi where CartID='".$CartID."'";
+        $query=$this->db->query($sSQL);
+
+        return $query;
+    }
 }
 

@@ -50,5 +50,11 @@ class Model_History extends CI_Model {
         return $query;
     }
 
+    public function delete($userId)
+    {
+        $sSQL="delete from history where userId='".$userId."'";
+        $query=$this->db->query($sSQL);
+        return $query;
+    }
 }
 

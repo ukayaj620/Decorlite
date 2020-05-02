@@ -46,5 +46,12 @@ class Model_Catagories extends CI_Model {
         return $query;
     }
 
+    public function delete($catagoryId)
+    {
+        $sSQL="delete from catagories where catagoryId='".$catagoryId."'";
+        $query=$this->db->query($sSQL);
+        
+        return $query;
+    }
 }
 

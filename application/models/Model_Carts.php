@@ -46,5 +46,13 @@ class Model_Carts extends CI_Model {
         return $query;
     }
 
+    public function delete($CartId)
+    {
+        $sSQL="delete from carts where CartId='".$CartId."'";
+        $query=$this->db->query($sSQL);
+        
+        return $query;
+    }
+
 }
 

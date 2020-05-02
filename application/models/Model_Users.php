@@ -52,5 +52,12 @@ class Model_Users extends CI_Model {
         return $query;
     }
 
+    public function delete($userId)
+    {
+        $sSQL="delete from users where userId='".$userId."'";
+        $query=$this->db->query($sSQL);
+        return $query;
+    }
+
 }
 

@@ -54,5 +54,11 @@ class Model_Items extends CI_Model {
         return $query;
     }
 
+    public function delete($itemId)
+    {
+        $sSQL="delete from items where itemId='".$itemId."'";
+        $query=$this->db->query($sSQL);
+        return $query;
+    }
 }
 
