@@ -1,6 +1,8 @@
+<link rel="stylesheet" href="<?php echo base_url('css/items.css'); ?>">
 <div class="col-3">
-    <a>
-        <div class="card" style="width: 18rem; background-color: #000; margin: 16px">
+    <a> <!---TODO add controller to redirect page to item description-->
+        <div class="card ">
+        <!---TODO add source handling-->
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
             </div>
