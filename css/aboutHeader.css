@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 .container-fluid {
-    background: url('../img/about.jpg') repeat 0 0;
+    background-image: url('../img/about.jpg');
     background-size: 100% 240px;
     display: flex;
     align-items: center;

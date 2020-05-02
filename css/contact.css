@@ -1,0 +1,18 @@
+.container-fluid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 24px 0;
+    width: 100%;
+    height: max-content;
+    flex-direction: row;
+}
+
+.container-information {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: max-content;
+    flex-direction: column;
+    margin: 0 24px 0 0;
+}

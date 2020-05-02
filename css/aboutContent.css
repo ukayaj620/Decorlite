@@ -1,0 +1,31 @@
+.container {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fader 1s 1s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+}
+
+@keyframes fader {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.text-container {
+    margin: 24px 0;
+}
+
+.inner-container {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 24px;
+    font-size: 24px;
+    text-align: center;
+}
