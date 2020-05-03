@@ -13,6 +13,8 @@
                     <img class="card-img-top" src="<?php echo $item->itemImage ?>" style="object-fit: cover;overflow: hidden;height: 16vw; width : 16vw;">
                     <div class="card-body">
                         <h6 class="card-title text-dark text-center"><?php echo $item->itemName ?></h6>
+                        <nr />
+                        <h6 class="card-title text-dark text-center"><b>Rp. <?php echo $item->itemPrice ?>,00</b></h6>
                     </div>
                 </div>
             </a>
