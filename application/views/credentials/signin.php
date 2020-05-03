@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="<?php echo base_url('css/credentials.css'); ?>">
 
 <div class="container-fluid">
-    <form class="custom-container">
+    <form class="custom-container" action="<?php echo base_url('auth/signin'); ?>" method="POST">
         <h1 class="inner-container display-6"> Let's Sign in! </h1>
         <div class="form-group">
             <label for="email">Email</label>
