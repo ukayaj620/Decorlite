@@ -10,7 +10,7 @@
         <div class="col-3 py-4">
             <a href="<?php echo base_url(); ?>/">
                 <div class="card"">
-                    <img class="card-img-top" src="<?php echo $item->itemImage ?>" style="object-fit: cover;overflow: hidden;height: 16vw; width : 16vw;">
+                    <img class="card-img-top" src="<?php echo site_url($item->itemImage) ?>" style="object-fit: cover;overflow: hidden;height: 16vw; width : 16vw;">
                     <div class="card-body">
                         <h6 class="card-title text-dark text-center"><?php echo $item->itemName ?></h6>
                         <nr />
