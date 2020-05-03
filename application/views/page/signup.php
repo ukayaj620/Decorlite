@@ -18,6 +18,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
   <?php $this->load->view('header/header.php'); ?>
 
+  <?php if ($this->session->flashdata('email_exist') == TRUE) { ?>
+	  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+		  </button>
+		  <p><strong><?php echo $this->session->flashdata('email_exist') ?></strong></p>
+	  </div>
+  <?php } else if ($this->session->flashdata('password_not_same') == TRUE) { ?>
+	  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+		  </button>
+		  <p><strong><?php echo $this->session->flashdata('password_not_same') ?></strong></p>
+	  </div>
+  <?php } else if ($this->session->flashdata('fill_it_properly') == TRUE) { ?>
+	  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+		  </button>
+		  <p><strong><?php echo $this->session->flashdata('fill_it_properly') ?></strong></p>
+	  </div>
+  <?php } ?>
+
   <?php $this->load->view('credentials/signup.php'); ?>
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

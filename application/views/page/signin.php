@@ -18,8 +18,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
   <?php $this->load->view('header/header.php'); ?>
   <?php if ($this->session->flashdata('sign_up_successful') == TRUE): ?>
-	  <div role="alert" class="alert alert-success alert-dismissible fade in">
-		  <p><?php echo $this->session->flashdata('sign_up_successful') ?></p>
+	  <div class="alert alert-success alert-dismissible fade show" role="alert">
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+		  </button>
+		  <p><strong><?php echo $this->session->flashdata('sign_up_successful') ?></strong></p>
 	  </div>
   <?php endif; ?>
 

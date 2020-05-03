@@ -32,13 +32,18 @@ class Auth extends CI_Controller {
         }
     }
 
-    public function signup() {
+	private function checkEmail($str) {
+		return (!preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $str)) ? FALSE : TRUE;
+	}
+
+    public function signup()
+	{
 		$userName = $this->input->post('name');
 		$userEmail = $this->input->post('email');
 		$password = $this->input->post('password');
 		$confirmPassword = $this->input->post('confirmPassword');
 
-		$where = array (
+		$where = array(
 			'userEmail' => $userEmail
 		);
 
@@ -46,23 +51,26 @@ class Auth extends CI_Controller {
 		if ($checkEmail > 0) {
 			$this->session->set_flashdata('email_exist',
 				'Email has already exist!');
-		} else {
-			if($password != $confirmPassword) {
-				$this->session->set_flashdata('password_not_same',
-					'Password and confirm password is not same!');
-			} else if ($userName && $userEmail && $password) {
-				$userId = uniqid('U-');
-
-				if ($this->model_users->insert($userId, $userName, $userEmail, md5($password), '')) {
-					$this->session->set_flashdata('sign_up_successful',
-						'Please sign in for verification');
-					redirect(base_url('page/signin'));
-				}
+			redirect(base_url('page/signup'));
+		} else if ($password != $confirmPassword) {
+			$this->session->set_flashdata('password_not_same',
+				'Password and confirm password is not same!');
+			redirect(base_url('page/signup'));
+		} else if ($userName && $this->checkEmail($userEmail) && $password) {
+			$userId = uniqid('U-');
+			if ($this->model_users->insert($userId, $userName, $userEmail, md5($password), '')) {
+				$this->session->set_flashdata('sign_up_successful',
+					'Please sign in for verification');
+				redirect(base_url('page/signin'));
 			}
+		} else if (!$userName || !$this->checkEmail($userEmail) || !$password) {
+			$this->session->set_flashdata('fill_it_properly',
+				'Please fill the sign up form properly');
+			redirect(base_url('page/signup'));
+		} else {
+			redirect(base_url('page/signup'));
 		}
-
-    }
-
+	}
     public function logout() {
 
     }
