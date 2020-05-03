@@ -1,0 +1,11 @@
+.custom-card {
+	object-fit: cover;
+	height: 200px;
+	width : 100%;
+}
+
+@media only screen and (max-width: 576px) {
+	.custom-card {
+		height: 300px;
+	}
+}
