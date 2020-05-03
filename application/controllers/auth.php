@@ -26,7 +26,7 @@ class Auth extends CI_Controller {
                 'isSignIn' => true
             );
             $this->session->set_userdata($data_session);
-            redirect(base_url('page/home'));
+            redirect(base_url('user/home'));
         } else {
             redirect(base_url('page/signin'));
         }
@@ -71,7 +71,7 @@ class Auth extends CI_Controller {
 			redirect(base_url('page/signup'));
 		}
 	}
-    public function logout() {
-
+    public function signout() {
+		$this->sess->destroy();
     }
 }
