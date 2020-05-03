@@ -20,7 +20,7 @@
         <a class="nav-link fg-custom-color" href="<?php echo base_url('page/contact'); ?>">CONTACT</a>
       </li>
       <li class="nav-item mx-2">
-        <a class="nav-link fg-custom-color" href="<?php echo base_url('page/contact'); ?>">CART</a>
+        <a class="nav-link fg-custom-color" href="<?php echo base_url('page/cart'); ?>">CART</a>
       </li>
       <li class="nav-item mx-2">
         <a href="<?php echo base_url('page/signin'); ?>" class="btn btn-custom-color d-none d-lg-block">SIGN IN</a>

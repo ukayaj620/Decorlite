@@ -15,7 +15,11 @@ class Page extends CI_Controller {
     }
     
     public function cart() {
-        $this->load->view('page/cart');
+        if ($this->session->userdata('name')) {
+            $this->load->view('page/cart');
+        } else {
+            $this->signin();
+        }
     }
 
     public function signin() {
