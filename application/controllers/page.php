@@ -25,4 +25,8 @@ class Page extends CI_Controller {
     public function signup() {
         $this->load->view('page/signup');
     }
+
+    public function home() {
+        $this->load->view('user/home');
+    }
 }

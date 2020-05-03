@@ -3,10 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Auth extends CI_Controller {
     
-    public function __contruct() {
+    public function __construct() {
         parent::__construct();
         $this->load->helper('url');
-        $this->load->model('Model_Auth');
+        $this->load->model('model_auth');
     }
 
     public function signin() {
@@ -17,13 +17,13 @@ class Auth extends CI_Controller {
             'userEmail' => $email,
             'userPassword' => md5($password)
         );
-        $checkRow = $this->Model_Auth->validate($where)->num_rows();
+        $checkRow = $this->model_auth->validate($where)->num_rows();
+        echo $checkRow;
         if ($checkRow > 0) {
             $data_session = array (
-                'name' => $username,
+                'name' => $checkRow['userName'],
                 'isSignIn' => true
             );
-
             $this->session->set_userdata($data_session);
             redirect(base_url('page/home'));
         } else {
