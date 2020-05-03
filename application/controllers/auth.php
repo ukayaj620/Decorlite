@@ -18,10 +18,9 @@ class Auth extends CI_Controller {
             'userPassword' => md5($password)
         );
         $checkRow = $this->model_auth->validate($where)->num_rows();
-        echo $checkRow;
         if ($checkRow > 0) {
             $data_session = array (
-                'name' => $checkRow['userName'],
+                'name' => $this->model_auth->validate($where)->row()->userName,
                 'isSignIn' => true
             );
             $this->session->set_userdata($data_session);
