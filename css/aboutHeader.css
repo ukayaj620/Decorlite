@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-.container-fluid {
+.bg {
     background-image: url('../img/about.jpg');
     background-size: 100% 240px;
+    animation: fader 1s 1s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+div.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    animation: fader 1s 1s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
 @keyframes fader {
@@ -22,15 +26,15 @@
 .about-text {
     font-family: 'Roboto', sans-serif;
     font-size: 40px;
-    color: #172B4D;
+    color: #FFF;
     margin: 48px 0 24px 0;
 }
 
 .custom-button {
     background-color: transparent;
     border-radius: 4px;
-    border: 2px solid #000;
-    color: #000;
+    border: 2px solid #FFF;
+    color: #FFF;
     width: max-content;
     height: 36px;
     margin: 0 0 48px 0;
