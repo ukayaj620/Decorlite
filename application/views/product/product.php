@@ -6,14 +6,16 @@
     <h6>These are the products that's just arrived this month, Check it out!</h6>
 </div>
 <div class="custom-container"> 
-    <div class="col-3">
-        <a href="<?php echo base_url(); ?>/"> <!---TODO add controller to redirect page to item description-->
-            <div class="card ">
-            <!---TODO add source handling-->
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
+    <?php foreach ($items as $item) {?>
+        <div class="col-3">
+            <a href="<?php echo base_url(); ?>/">
+                <div class="card"">
+                    <img class="card-img-top" src="<?php echo $item->itemImage ?>" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title text-dark text-center"><?php echo $item->itemName ?></h5>
+                    </div>
                 </div>
-            </div>
-        </a>
-    </div>
+            </a>
+        </div>
+    <?php } ?>
 </div>

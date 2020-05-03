@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <main role="main" class="container">
     <?php $this->load->view('carousel/carousel.php'); ?>
 
-    <?php $this->load->view('product/product.php'); ?>
+    <?php $this->load->view('product/product.php', $items); ?>
   </main>
 
   <?php $this->load->view('footer/footer.php'); ?>
