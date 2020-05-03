@@ -17,6 +17,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <body>
   <?php $this->load->view('header/header.php'); ?>
+  <?php if ($this->session->flashdata('sign_up_successful') == TRUE): ?>
+	  <div role="alert" class="alert alert-success alert-dismissible fade in">
+		  <p><?php echo $this->session->flashdata('sign_up_successful') ?></p>
+	  </div>
+  <?php endif; ?>
 
   <?php $this->load->view('credentials/signin.php'); ?>
 
