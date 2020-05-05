@@ -12,8 +12,7 @@
  * @link            https://www.codexworld.com
  */
 
-require_once 'dompdf/autoload.inc.php';
-
+require_once("./application/third_party/dompdf/autoload.inc.php");
 // reference the Dompdf namespace
 use Dompdf\Dompdf;
 
