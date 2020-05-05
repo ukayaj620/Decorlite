@@ -17,14 +17,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <body>
   <?php $this->load->view('header/header.php'); ?>
-  <?php if ($this->session->flashdata('sign_up_successful') == TRUE): ?>
+  <?php if ($this->session->flashdata('sign_up_successful') == TRUE) { ?>
 	  <div class="alert alert-success alert-dismissible fade show" role="alert">
 		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 			  <span aria-hidden="true">&times;</span>
 		  </button>
 		  <p><strong><?php echo $this->session->flashdata('sign_up_successful') ?></strong></p>
 	  </div>
-  <?php endif; ?>
+  <?php }
+  else if ($this->session->flashdata('wrong_credentials') == TRUE) { ?>
+	  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+		  </button>
+		  <p><strong><?php echo $this->session->flashdata('wrong_credentials') ?></strong></p>
+	  </div>
+  <?php }
+  else if ($this->session->flashdata('sign_in_first') == TRUE) { ?>
+	  <div class="alert alert-info alert-dismissible fade show" role="alert">
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+		  </button>
+		  <p><strong><?php echo $this->session->flashdata('sign_in_first') ?></strong></p>
+	  </div>
+  <?php }
+  else if ($this->session->flashdata('update_pass_success') == TRUE) { ?>
+	  <div class="alert alert-success alert-dismissible fade show" role="alert">
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+		  </button>
+		  <p><strong><?php echo $this->session->flashdata('update_pass_success') ?></strong></p>
+	  </div>
+  <?php } ?>
 
   <?php $this->load->view('credentials/signin.php'); ?>
 

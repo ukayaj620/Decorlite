@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2020 at 02:36 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.2.28
+-- Generation Time: May 05, 2020 at 06:45 AM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `decorlite`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `adminId` varchar(30) NOT NULL,
+  `adminName` varchar(80) NOT NULL,
+  `adminPassword` varchar(120) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`adminId`, `adminName`, `adminPassword`) VALUES
+('admin', 'Admin Biasa aja', '21232f297a57a5a743894a0e4a801fc3');
 
 -- --------------------------------------------------------
 
@@ -64,6 +83,7 @@ INSERT INTO `catagories` (`catagoryId`, `catagoryName`) VALUES
 --
 
 CREATE TABLE `history` (
+  `paymentId` varchar(30) NOT NULL,
   `userId` varchar(30) NOT NULL,
   `userPayment` int(16) NOT NULL,
   `timePayment` varchar(50) NOT NULL,
@@ -92,16 +112,16 @@ CREATE TABLE `items` (
 
 INSERT INTO `items` (`itemId`, `itemName`, `itemDescription`, `itemPrice`, `itemStock`, `catagoryId`, `itemImage`) VALUES
 ('ALT-0333', 'Party Popper', 'Mari meriah kan setiap momen yg berbahagia anda dengan Party Popper ini!!!\r\nParty Popper berisi kertas kecil warna warni!\r\nCara pemakaian sangat mudah!! cukup diputar mengikuti arah anak panah pada popper.\r\n\r\nDimensi Produk:\r\nTinggi : 28cm\r\nDiameter : 5cm', 21000, 88, 'CT-ALT', 'img/Decorlite/party popper.jpg'),
-('ALT-0666', 'Crazy String', 'tersedia warna merah, kuning, hijau, biru, putih, ungu', 23000, 45, 'CT-ALT', 'img/Decorlite/grazy string.PNG'),
-('BLN-0101', 'balon foil bunga', '- ukuran 40cm\r\n- tersedia 5 warna : Pink, Ungu, Merah, Biru, Emas\r\n- mudah ditiup dan self sealed', 20000, 30, 'CT-BLN', 'img/Decorlite/balon foil bunga.jpg'),
+('ALT-0666', 'Crazy String', 'tersedia warna merah, kuning, hijau, biru, putih, ungu', 23000, 21, 'CT-ALT', 'img/Decorlite/grazy string.PNG'),
+('BLN-0101', 'balon foil bunga', '- ukuran 40cm\r\n- tersedia 5 warna : Pink, Ungu, Merah, Biru, Emas\r\n- mudah ditiup dan self sealed', 20000, 1000, 'CT-BLN', 'img/Decorlite/balon foil bunga.jpg'),
 ('BLN-0111', 'balon foil bucket bunga', 'Balon foil buket bunga\r\nTinggi balon 60 cm\r\nDiameter 41 cm.', 6000, 50, 'CT-BLN', 'img/Decorlite/balon foil bucket bunga.jpg'),
 ('BLN-0222', 'balon latex pastel macaron mix isi 100 pcs', 'Warna mix / campuran\r\nUkuran 12 inci (30cm)\r\nHelium quality', 186000, 15, 'CT-BLN', 'img/Decorlite/balon pastel latex.jpg'),
 ('BLN-0246', 'balon foil angka', 'Balon Huruf/Angka\r\nUkuran : 40cm\r\nHuruf : A-Z\r\nAngka : 0-9\r\nWarna : Gold, Silver, Biru, Pink\r\n( HARGA YANG TERTERA UNTUK 1pcs/1 balon !!! )\r\n( TIDAK ADA MINIMAL PEMBELIAN )', 3000, 3000, 'CT-BLN', 'img/Decorlite/balon foil angka.jpg'),
 ('BLN-0255', 'Balon LED', 'Barang-barang yang anda dapat dalam kotak produk:\r\n5 x Balon Ulang Tahun Menyala Dengan LED Light.', 25000, 66, 'CT-BLN', 'img/Decorlite/balon led.jpg'),
-('BLN-0303', 'Balon foil cake', 'ukuran 40 cm\r\n1. Rainbow\r\n2. Cup Cake\r\n3. Candy\r\n4. Cake Pink\r\n5. Cake Coklat', 10000, 120, 'CT-BLN', 'img/Decorlite/balon foil cake.jpg'),
+('BLN-0303', 'Balon foil cake', 'ukuran 40 cm\r\n1. Rainbow\r\n2. Cup Cake\r\n3. Candy\r\n4. Cake Pink\r\n5. Cake Coklat', 10000, 117, 'CT-BLN', 'img/Decorlite/balon foil cake.jpg'),
 ('BLN-0404', 'balon foil huruf gold', 'Harga tersebut adalah HARGA PER PCS\r\nWarna (Gold, Silver, Pink, Biru).\r\nUk 40cm', 3000, 360, 'CT-BLN', 'img/Decorlite/balon foil huruf gold.jpg'),
-('BLN-0500', 'balon latex pentil twist', 'Balon Panjang / Pentil / Twist / Magic / Cacing (warna Campur) \r\n(BALON DIKIRIM DALAM KEADAAN BELUM DIBENTUK)\r\nDapat dibentuk macam\".\r\nbisa ditiup menggunakan pompa balon.\r\nWarna : Campur, tidak bisa pilih.', 2000, 1500, 'CT-BLN', 'img/Decorlite/balon latex pentil twist.jpg'),
-('BLN-0555', 'balon latex smile', 'Balon latex smile\r\nUk : 12 inch ( 30 cm )\r\nBahan : natural latex, helium quality\r\nWarna : random ( tdk bisa pilih )', 3000, 600, 'CT-BLN', 'img/Decorlite/balon latex smile.jpg'),
+('BLN-0500', 'balon latex pentil twist', 'Balon Panjang / Pentil / Twist / Magic / Cacing (warna Campur) (BALON DIKIRIM DALAM KEADAAN BELUM DIBENTUK)Dapat dibentuk macam', 30000, 1473, 'CT-BLN', 'img/Decorlite/balon latex pentil twist.jpg'),
+('BLN-0555', 'balon latex smile', 'Balon latex smile\r\nUk : 12 inch ( 30 cm )\r\nBahan : natural latex, helium quality\r\nWarna : random ( tdk bisa pilih )', 3000, 596, 'CT-BLN', 'img/Decorlite/balon latex smile.jpg'),
 ('BLN-0666', 'balon foil love & star', 'Balon Foil Love warna merah, biru, gold, silver, pink muda, ungu\r\nBalon Foil Star warna merah, biru, gold, silver, pink', 4000, 330, 'CT-BLN', 'img/Decorlite/balon foil love & star.jpg'),
 ('BLN-0690', 'Balon Bobo LED PVC', 'Balon ini dapat dipakai diberbagai acara sesuai dengan keinginan anda, dengan lampu-lampu yang indah dapat mempercantik acara anda. ', 30000, 12, 'CT-BLN', 'img/Decorlite/Balon Bobo LED PVC.jpg'),
 ('BLN-0888', 'Balon Latex Polkadot 100pcs', '-Hijau titik putih\r\n-Hitam titik putih\r\n-Biru titik putih\r\n-Pink titik putih\r\n-Merah titik putih\r\n-Orange titik putih\r\n-Kuning titik putih\r\n-Putih titik hitam\r\n-Putih titik merah\r\n-Putih titik campur atau random', 213000, 10, 'CT-BLN', 'img/Decorlite/balon polkadot latex.jpg'),
@@ -147,6 +167,13 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`userId`, `userName`, `userEmail`, `userPassword`, `session`) VALUES
+('U-5eb052dfc4305', 'Jayaku Briliantio', 'jayakubriliantio@gmail.com', 'cd21213bf124cb46aa244453b4e8253b', '');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -167,8 +194,8 @@ ALTER TABLE `catagories`
 -- Indexes for table `history`
 --
 ALTER TABLE `history`
-  ADD KEY `userId` (`userId`),
-  ADD KEY `CartID` (`CartID`);
+  ADD PRIMARY KEY (`paymentId`),
+  ADD KEY `userId` (`userId`);
 
 --
 -- Indexes for table `items`
@@ -181,7 +208,6 @@ ALTER TABLE `items`
 -- Indexes for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  ADD KEY `CartID` (`CartID`),
   ADD KEY `ItemID` (`ItemID`);
 
 --
@@ -204,8 +230,7 @@ ALTER TABLE `carts`
 -- Constraints for table `history`
 --
 ALTER TABLE `history`
-  ADD CONSTRAINT `history_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`),
-  ADD CONSTRAINT `history_ibfk_2` FOREIGN KEY (`CartID`) REFERENCES `carts` (`CartId`);
+  ADD CONSTRAINT `history_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`);
 
 --
 -- Constraints for table `items`
@@ -217,7 +242,6 @@ ALTER TABLE `items`
 -- Constraints for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  ADD CONSTRAINT `transaksi_ibfk_1` FOREIGN KEY (`CartID`) REFERENCES `carts` (`CartId`),
   ADD CONSTRAINT `transaksi_ibfk_2` FOREIGN KEY (`ItemID`) REFERENCES `items` (`itemId`);
 COMMIT;
 

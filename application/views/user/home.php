@@ -17,6 +17,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <body>
 
+	<?php $this->load->view('header/userHeader', array('name' => $this->session->name)); ?>
+
+	<?php if($this->session->flashdata('item_add_to_cart') == TRUE) { ?>
+		<div class="alert alert-success alert-dismissible fade show" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<p><strong><?php echo $this->session->flashdata('item_add_to_cart') ?></strong></p>
+		</div>
+	<?php }?>
+
+	<main role="main" class="container">
+		<?php $this->load->view('carousel/carousel'); ?>
+
+		<?php $this->load->view('product/product', $items); ?>
+	</main>
+
+	<?php $this->load->view('footer/footer') ?>
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

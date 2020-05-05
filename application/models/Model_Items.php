@@ -40,6 +40,14 @@ class Model_Items extends CI_Model {
         return $this->db->insert('items', $this);
      }
 
+     public function updateItems($itemId, $itemStock) {
+		 $sSQL= "update items set ";
+		 $sSQL.="itemStock=".$itemStock." ";
+		 $sSQL.=" where itemId='".$itemId."'";
+		 $query=$this->db->query($sSQL);
+		 return $query;
+	 }
+
     public function update($itemId, $itemName, $itemDescription, $itemPrice, $itemStock, $catagoryId)
     {
         $sSQL= "update items set ";

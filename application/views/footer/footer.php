@@ -10,9 +10,9 @@
         </div>
         <div class="row my-2">
             <div class="col-12 d-flex justify-content-center">
-                <img src="img/Logo/github.png" class="rounded-circle bg-light mx-3" width="40px" height="40px">
-                <img src="img/Logo/linkedin.png" class="rounded-circle bg-light mx-3" width="40px" height="40px">
-                <img src="img/Logo/whatsapp.png" class="rounded-circle bg-light mx-3" width="40px" height="40px">
+                <img src="<?= site_url('img/Logo/github.png') ?>" class="rounded-circle bg-light mx-3" width="40px" height="40px">
+                <img src="<?= site_url('img/Logo/linkedin.png') ?>" class="rounded-circle bg-light mx-3" width="40px" height="40px">
+                <img src="<?= site_url('img/Logo/whatsapp.png') ?>" class="rounded-circle bg-light mx-3" width="40px" height="40px">
             </div>
         </div>
         <div class="row my-4">

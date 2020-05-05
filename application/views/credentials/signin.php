@@ -11,7 +11,7 @@
             <label for="password">Password</label>
             <input type="password" name="password" class="form-control" id="password" placeholder="password">
         </div>
-        <a class="custom-text" href="#">Forgot Password?</a>
+        <a class="custom-text" href="<?php echo base_url('page/forgotpassword');?>">Forgot Password?</a>
         <div class="form-group">
             <button type="submit" class="btn-custom">Sign In</button>
         </div>

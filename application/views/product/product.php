@@ -8,7 +8,7 @@
 <div class="custom-container"> 
     <?php foreach ($items as $item) {?>
         <div class="col-12 col-md-3 py-4">
-            <a href="<?php echo base_url(); ?>/">
+            <a href="<?php echo base_url('/item/getItemDescription/'.$item->itemId); ?>/">
                 <div class="card">
                     <img class="card-img-top custom-card" src="<?php echo site_url($item->itemImage) ?>">
                     <div class="card-body">

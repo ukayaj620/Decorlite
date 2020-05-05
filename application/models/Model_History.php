@@ -4,6 +4,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Model_History extends CI_Model {
 
+	public function historyChecker($where) {
+		return $this->db->get_where('history', $where);
+	}
+
+	public function getCartHistoryList($cartId) {
+		$sql = "SELECT h.CartID, i.itemId, i.itemName, i.itemDescription, i.itemPrice, i.itemStock, i.itemImage, t.JumalahBarang 
+				FROM history h, items i, transaksi t
+				WHERE h.CartID = t.CartID AND t.ItemID = i.itemId AND h.CartID='". $cartId ."'" .
+			"GROUP BY i.itemId";
+		$query = $this->db->query($sql);
+		foreach($query->result() as $row) {
+			$result []= $row;
+		}
+
+		return $result;
+	}
+
     public function getList()
     {
         $sSQL="select * from history order by userId";
@@ -29,8 +46,9 @@ class Model_History extends CI_Model {
         return $hasil;
     }
 
-    public function insert($userId, $userPayment, $timePayment, $CartID)
+    public function insert($paymentId, $userId, $userPayment, $timePayment, $CartID)
     {
+    	$this->paymentId = $paymentId;
         $this->userId = $userId;
         $this->userPayment = $userPayment;
         $this->timePayment = $timePayment;

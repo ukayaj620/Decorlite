@@ -29,4 +29,8 @@ class Page extends CI_Controller {
     public function signup() {
         $this->load->view('page/signup');
     }
+
+    public function forgotpassword() {
+    	$this->load->view('page/forgotpassword');
+	}
 }

@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class Auth extends CI_Controller {
     
@@ -23,11 +23,14 @@ class Auth extends CI_Controller {
         if ($checkRow > 0) {
             $data_session = array (
                 'name' => $this->model_auth->validate($where)->row()->userName,
+                'userId' => $this->model_auth->validate($where)->row()->userId,
                 'isSignIn' => true
             );
             $this->session->set_userdata($data_session);
             redirect(base_url('user/home'));
         } else {
+        	$this->session->set_flashdata('wrong_credentials',
+				'Please input your credentials correctly!');
             redirect(base_url('page/signin'));
         }
     }
@@ -72,6 +75,38 @@ class Auth extends CI_Controller {
 		}
 	}
     public function signout() {
-		$this->sess->destroy();
+		$this->session->sess_destroy();
+		redirect(base_url());
     }
+
+    public function forgotpassword() {
+    	$email = $this->input->post('email');
+    	$password = $this->input->post('password');
+    	$confirmPassword = $this->input->post('confirmpassword');
+
+    	$where = array('userEmail' => $email);
+
+    	$checkRow = $this->model_auth->validate($where)->num_rows();
+    	if ($checkRow > 0) {
+    		if ($password == $confirmPassword) {
+				if ($this->model_auth->updatePassword(md5($password), $email)) {
+					$this->session->set_flashdata('update_pass_success',
+						'Update Password Successfully. Proceed to sign in');
+					redirect(base_url('page/signin'));
+				} else {
+					$this->session->set_flashdata('update_pass_failed',
+						'Something wrong happened');
+					redirect(base_url('page/forgotpassword'));
+				}
+			} else {
+				$this->session->set_flashdata('password_not_same',
+					'Password and confirm password is not same!');
+				redirect(base_url('page/forgotpassword'));
+			}
+		} else {
+			$this->session->set_flashdata('email_not_exist',
+				'Your email does not exist!');
+			redirect(base_url('page/forgotpassword'));
+		}
+	}
 }
