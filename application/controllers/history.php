@@ -18,6 +18,7 @@ class History extends CI_Controller {
 			$userId =$this->session->userId;
 			$allDataItems = array();
 			$paymentHistory = array();
+			$cartIds = array();
 			$where = array( 'userId' => $userId);
 			$checkRow = $this->Model_history->historyChecker($where)->num_rows();
 			if ($checkRow > 0) {
@@ -42,10 +43,12 @@ class History extends CI_Controller {
 
 					$historyId = array('paymentId' => $h->paymentId);
 					array_push($paymentHistory, $historyId);
+					array_push($cartIds, $h->CartID);
 				}
 
 				$data['allDataItems'] = $allDataItems;
 				$data['allPaymentId'] = $paymentHistory;
+				$data['allCartId'] = $cartIds;
 
 				$this->load->view('user/history', $data);
 			} else {
@@ -60,5 +63,31 @@ class History extends CI_Controller {
 				'You must sign in first before access!');
 			redirect(base_url('page/signin'));
 		}
+	}
+
+	public function generatePDF($cartId, $paymentId) {
+		$this->load->library('pdfgenerator');
+
+		$list = $this->Model_history->getCartHistoryList($cartId);
+		$dataItems = array();
+		foreach ($list as $l) {
+			$itemName = $l->itemName;
+			$itemCount = $l->JumalahBarang;
+			$itemPrice = $this->Model_items->getByID($l->itemId)[0]->itemPrice;
+
+			$newData = array(
+				'itemName' => $itemName,
+				'itemPrice' => $itemPrice,
+				'itemCount' => $itemCount
+			);
+
+			array_push($dataItems, $newData);
+		}
+
+		$data['dataItems'] = $dataItems;
+		$data['paymentId'] = $paymentId;
+		$html = $this->load->view('/user/pdf', $data, true);
+
+		$this->pdfgenerator->generate($html);
 	}
 }

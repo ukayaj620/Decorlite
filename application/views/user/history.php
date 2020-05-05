@@ -8,11 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<title>Decorlite</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-				integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900">
-	<link rel="icon" href="/icon.png">
-	<link rel="stylesheet" href="/assets/css/styles.css">
+	<link rel="stylesheet" href="<?= base_url('/css/bootstrap.min.css') ?>">
 	<link rel="stylesheet" href="<?php echo base_url('css/card.css'); ?>">
 	<style>
 		@media (max-width: 576px) {
@@ -76,7 +72,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<?php endforeach; ?>
 								<hr class="mt-3" />
 								<div class="row d-flex flex-row">
-									<div class="col-3 col-md-6"></div>
+									<div class="col-3 col-md-6"><a href="<?= base_url('history/generatePDF/'.$allCartId[$i].'/'.$allPaymentId[$i]['paymentId']) ?>" class="btn btn-warning">Cetak PDF</a></div>
 									<h5 class="col-5 col-md-3 font-weight-bold custom-title">Subtotal</h5>
 									<h5 class="col-4 col-md-3 font-weight-bold custom-title">Rp<?= $subtotal ?></h5>
 								</div>
