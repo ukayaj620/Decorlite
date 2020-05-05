@@ -5,6 +5,6 @@
     Decorlite adalah toko online yang menjual barang dekorasi untuk
 	pesta. Kami hadir untuk membantu membuat pesta kalian menjadi lebih
 	meriah dan indah. Dari dekorasi pesta ulang tahun hingga dekorasi
-	pesta menikah.
+	pesta pernikahan.
     </div>
 </div>
