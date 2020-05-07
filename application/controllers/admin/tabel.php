@@ -55,7 +55,7 @@ class Tabel extends CI_Controller {
       $data = $this->input->post('data');
 
       if ($table_name == 'items') {
-         $data[] = 'img/'.$this->_uploadPhoto();
+         $data[] = 'img/Decorlite/'.$this->_uploadPhoto();
          unlink('./'.$this->input->post('oldPath'));
       }
 
@@ -68,7 +68,7 @@ class Tabel extends CI_Controller {
       $data = $this->input->post('data');
 
       if ($table_name == 'items') {
-         $data[] = 'img/Decorlite'.$this->_uploadPhoto();
+         $data[] = 'img/Decorlite/'.$this->_uploadPhoto();
       }
 
       call_user_func_array(array($this->get_model($table_name), 'insert'), $data);
