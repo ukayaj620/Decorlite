@@ -144,7 +144,7 @@ class Tabel extends CI_Controller {
 
    public function _uploadPhoto()
    {
-      $config['upload_path']   = './img/';
+      $config['upload_path']   = './img/Decorlite/';
       $config['allowed_types'] = 'gif|jpg|png';
       $config['file_name']     = $this->input->post('data')[0];
       $config['overwrite']     = true;
